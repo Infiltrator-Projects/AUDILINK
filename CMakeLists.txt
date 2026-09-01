@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 cmake_minimum_required(VERSION 3.20)
-project(AUDILINK VERSION 0.0.1 LANGUAGES C)
+project(AUDILINK VERSION 0.1.0 LANGUAGES C)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
@@ -19,3 +19,7 @@ add_test(NAME audilink-smoke COMMAND audilink-smoke)
 add_executable(audilink-obd2 tests/test_obd2.c)
 target_link_libraries(audilink-obd2 PRIVATE AUDILINK::Core)
 add_test(NAME audilink-obd2 COMMAND audilink-obd2)
+
+add_executable(audilink-generic-diagnostics tests/test_generic_diagnostics.c)
+target_link_libraries(audilink-generic-diagnostics PRIVATE AUDILINK::Core)
+add_test(NAME audilink-generic-diagnostics COMMAND audilink-generic-diagnostics)

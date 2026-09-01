@@ -1,0 +1,67 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+#ifndef AUDILINK_DIAGNOSTICS_H
+#define AUDILINK_DIAGNOSTICS_H
+
+#include "audilink/obd2.h"
+#include "link/diagnostic_flow.h"
+#include "link/diagnostic_request.h"
+#include "link/discover.h"
+#include "link/doip.h"
+#include "link/ecu_probe.h"
+#include "link/elm327.h"
+#include "link/elm327_can.h"
+#include "link/elm327_probe.h"
+#include "link/elm327_session.h"
+#include "link/isotp.h"
+#include "link/kwp2000.h"
+#include "link/parameter.h"
+#include "link/parameter_store.h"
+#include "link/scheduler.h"
+#include "link/telemetry.h"
+#include "link/transport.h"
+#include "link/uds.h"
+#include "link/uds_dtc.h"
+#include "link/uds_services.h"
+
+typedef LinkTransport AudilinkTransport;
+typedef LinkTransportStatus AudilinkTransportStatus;
+typedef LinkAdapterKind AudilinkAdapterKind;
+typedef LinkAdapterCapabilities AudilinkAdapterCapabilities;
+typedef LinkElm327Response AudilinkElm327Response;
+typedef LinkElm327Session AudilinkElm327Session;
+typedef LinkIsoTpCanFrame AudilinkIsoTpCanFrame;
+typedef LinkUdsResponse AudilinkUdsResponse;
+typedef LinkDoipHeader AudilinkDoipHeader;
+typedef LinkParameterStore AudilinkParameterStore;
+typedef LinkScheduler AudilinkScheduler;
+typedef LinkTelemetryStore AudilinkTelemetryStore;
+typedef LinkDiagnosticFlow AudilinkDiagnosticFlow;
+typedef LinkDiagnosticRequestDefinition AudilinkDiagnosticRequestDefinition;
+typedef LinkEcuProbe AudilinkEcuProbe;
+
+#define audilink_adapter_kind_from_bluetooth_name link_adapter_kind_from_bluetooth_name
+#define audilink_adapter_kind_name link_adapter_kind_name
+#define audilink_adapter_capabilities link_adapter_capabilities
+#define audilink_adapter_has_capability link_adapter_has_capability
+#define audilink_transport_is_valid link_transport_is_valid
+#define audilink_elm327_protocol_definition_count link_elm327_protocol_definition_count
+#define audilink_elm327_protocol_definition_at link_elm327_protocol_definition_at
+#define audilink_elm327_protocol_definition link_elm327_protocol_definition
+#define audilink_isotp_can_data_length_is_valid link_isotp_can_data_length_is_valid
+#define audilink_uds_standard_service_count link_uds_standard_service_count
+#define audilink_uds_standard_service_find link_uds_standard_service_find
+#define audilink_doip_build_diagnostic_message link_doip_build_diagnostic_message
+#define audilink_doip_decode_diagnostic_message link_doip_decode_diagnostic_message
+#define audilink_safety_classify link_safety_classify
+#define audilink_parameter_obd2_definition_count link_parameter_obd2_definition_count
+#define audilink_parameter_store_init link_parameter_store_init
+#define audilink_parameter_store_definition_count link_parameter_store_definition_count
+#define audilink_scheduler_init link_scheduler_init
+#define audilink_scheduler_next link_scheduler_next
+#define audilink_telemetry_store_init link_telemetry_store_init
+#define audilink_telemetry_store_history_count link_telemetry_store_history_count
+#define audilink_diagnostic_execution_mode_for_adapter link_diagnostic_execution_mode_for_adapter
+#define audilink_diagnostic_request_supported_by_adapter link_diagnostic_request_supported_by_adapter
+#define audilink_ecu_probe_profile_is_valid link_ecu_probe_profile_is_valid
+
+#endif
