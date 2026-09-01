@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=AUDILINK
+Comment=Audi vehicle diagnostics
+Exec=audilink
+Icon=applications-engineering
+Terminal=false
+Categories=Utility;
+Keywords=Audi;OBD;diagnostics;vehicle;
