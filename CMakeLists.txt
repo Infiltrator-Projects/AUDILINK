@@ -15,3 +15,7 @@ target_link_libraries(audilink-core PUBLIC LINK::Core)
 add_executable(audilink-smoke tests/test_smoke.c)
 target_link_libraries(audilink-smoke PRIVATE AUDILINK::Core)
 add_test(NAME audilink-smoke COMMAND audilink-smoke)
+
+add_executable(audilink-obd2 tests/test_obd2.c)
+target_link_libraries(audilink-obd2 PRIVATE AUDILINK::Core)
+add_test(NAME audilink-obd2 COMMAND audilink-obd2)

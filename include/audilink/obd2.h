@@ -1,0 +1,24 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+#ifndef AUDILINK_OBD2_H
+#define AUDILINK_OBD2_H
+#include "link/obd2.h"
+#include "link/dtc_knowledge.h"
+typedef LinkObd2Result AudilinkObd2Result;
+typedef LinkObd2DecodedPid AudilinkObd2DecodedPid;
+typedef LinkObd2DtcKind AudilinkObd2DtcKind;
+#define AUDILINK_OBD2_RESULT_OK LINK_OBD2_RESULT_OK
+#define AUDILINK_OBD2_DTC_STORED LINK_OBD2_DTC_STORED
+#define AUDILINK_OBD2_DTC_PENDING LINK_OBD2_DTC_PENDING
+#define AUDILINK_OBD2_DTC_PERMANENT LINK_OBD2_DTC_PERMANENT
+#define audilink_obd2_pid_definition_count link_obd2_pid_definition_count
+#define audilink_obd2_mode01_assigned_count link_obd2_mode01_assigned_count
+#define audilink_obd2_build_live_pid_request link_obd2_build_live_pid_request
+#define audilink_obd2_build_freeze_pid_request link_obd2_build_freeze_pid_request
+#define audilink_obd2_build_supported_pid_request link_obd2_build_supported_pid_request
+#define audilink_obd2_build_vin_request link_obd2_build_vin_request
+#define audilink_obd2_build_dtc_request link_obd2_build_dtc_request
+#define audilink_obd2_decode_pid_payload link_obd2_decode_pid_payload
+#define audilink_obd2_decode_dtc_pair link_obd2_decode_dtc_pair
+#define audilink_obd2_obdonuds_pid_to_did link_obd2_obdonuds_pid_to_did
+#define audilink_dtc_resolve link_dtc_resolve
+#endif
