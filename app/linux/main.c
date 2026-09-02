@@ -373,9 +373,9 @@ int main(int argc, char **argv)
     ProductContext context = {0};
     LinkGtkShellDescriptor descriptor = {0};
     descriptor.app_id = "com.github.InfiltratorProjects.AUDILINK";
-    descriptor.window_title = "AUDILINK · Ford Diagnostics";
+    descriptor.window_title = "AUDILINK · Audi Diagnostics";
     descriptor.brand_name = "AUDILINK";
-    descriptor.brand_subtitle = "FORD · LINK DIAGNOSTICS";
+    descriptor.brand_subtitle = "AUDI · LINK DIAGNOSTICS";
     descriptor.version = audilink_version();
     descriptor.css = css;
     descriptor.render_section = render;
