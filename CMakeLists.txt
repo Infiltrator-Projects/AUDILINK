@@ -35,10 +35,21 @@ if(AUDILINK_BUILD_LINUX_GUI)
   endif()
   find_package(PkgConfig REQUIRED)
   pkg_check_modules(GTK4 REQUIRED IMPORTED_TARGET gtk4>=4.6)
-  add_executable(audilink app/linux/main.c)
+  find_program(GLIB_COMPILE_RESOURCES_EXECUTABLE NAMES glib-compile-resources REQUIRED)
+  set(AUDILINK_LINUX_RESOURCE_SOURCE "${CMAKE_CURRENT_BINARY_DIR}/audilink-linux-resources.c")
+  add_custom_command(OUTPUT "${AUDILINK_LINUX_RESOURCE_SOURCE}"
+    COMMAND "${GLIB_COMPILE_RESOURCES_EXECUTABLE}" --generate-source --c-name=audilink_linux_resources
+      "--target=${AUDILINK_LINUX_RESOURCE_SOURCE}" audilink.gresource.xml
+    WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/app/linux"
+    DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/app/linux/audilink.gresource.xml"
+      "${CMAKE_CURRENT_SOURCE_DIR}/app/linux/assets/audilink-emblem.png"
+    VERBATIM)
+  add_executable(audilink app/linux/main.c "${AUDILINK_LINUX_RESOURCE_SOURCE}")
+  set_source_files_properties("${AUDILINK_LINUX_RESOURCE_SOURCE}" PROPERTIES COMPILE_OPTIONS "-w")
   target_link_libraries(audilink PRIVATE AUDILINK::Core PkgConfig::GTK4)
   link_enable_linux_gtk_shell(audilink UDEV_RULE_NAME "60-audilink-openport2.rules")
   install(TARGETS audilink RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")
+  install(FILES app/linux/assets/audilink-emblem.png DESTINATION "${CMAKE_INSTALL_DATADIR}/pixmaps" RENAME audilink.png)
   install(FILES app/linux/audilink.desktop DESTINATION "${CMAKE_INSTALL_DATADIR}/applications")
   install(FILES README.md docs/OBD2.md docs/GENERIC_BASELINE.md DESTINATION "${CMAKE_INSTALL_DATADIR}/doc/audilink")
   set(CPACK_GENERATOR "DEB")
@@ -65,6 +76,7 @@ if(AUDILINK_BUILD_WINDOWS_DISCOVER)
     PRODUCT_NAME "AUDILINK" PRODUCT_SLUG "audilink" WINDOW_CLASS "AUDILINKDiscoverWindow"
     PRODUCT_VERSION "${PROJECT_VERSION}" PRODUCT_COPYRIGHT "Copyright (C) 2026 Shannon Smith"
     PRODUCT_SUBTITLE "Audi Diagnostics"
-    PRODUCT_WEBSITE "https://github.com/Infiltrator-Projects/AUDILINK")
+    PRODUCT_WEBSITE "https://github.com/Infiltrator-Projects/AUDILINK"
+    PRODUCT_ICON_PNG "${CMAKE_CURRENT_SOURCE_DIR}/app/ios/AUDILINK/Assets.xcassets/AppIcon.appiconset/AppIcon-60@3x.png")
   target_link_libraries(audilink-discover PRIVATE AUDILINK::Core)
 endif()

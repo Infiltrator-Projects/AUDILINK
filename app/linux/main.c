@@ -377,6 +377,7 @@ int main(int argc, char **argv)
     descriptor.brand_name = "AUDILINK";
     descriptor.brand_subtitle = "AUDI · LINK DIAGNOSTICS";
     descriptor.version = audilink_version();
+    descriptor.emblem_resource = "/com/github/Infiltrator-Projects/AUDILINK/audilink-emblem.png";
     descriptor.css = css;
     descriptor.render_section = render;
     descriptor.connection_changed = connection_changed;
