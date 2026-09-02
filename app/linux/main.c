@@ -105,7 +105,7 @@ static void append_vehicle(GtkWidget *body, ProductContext *context)
             : "Select an adapter above and press LINK UP");
     link_gtk_card_append_detail(connection, "Diagnostic state", stage(context));
     link_gtk_card_append_note(connection,
-        "LINK owns the common standards flow. Audi-specific claims remain evidence-gated.");
+        "AUDILINK is GUI-first. LINK owns the common standards flow. Audi-specific claims remain evidence-gated.");
 
     gtk_box_append(GTK_BOX(body), vehicle);
     gtk_box_append(GTK_BOX(body), connection);
