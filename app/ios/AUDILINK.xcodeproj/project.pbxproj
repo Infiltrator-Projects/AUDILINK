@@ -13,6 +13,7 @@
 		A00000000000000000000004 /* ../../platform/apple/AudiLinkBLETransport.m in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000007 /* ../../platform/apple/AudiLinkBLETransport.m */; };
 		A00000000000000000000005 /* ../../platform/apple/AudiLinkDiagnosticsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000009 /* ../../platform/apple/AudiLinkDiagnosticsController.m */; };
 		A00000000000000000000024 /* ../../src/link/platform/apple/LinkDiagnosticsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000024 /* ../../src/link/platform/apple/LinkDiagnosticsController.m */; };
+		A00000000000000000000025 /* ../../src/link/platform/apple/LinkDiagnosticUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000025 /* ../../src/link/platform/apple/LinkDiagnosticUI.swift */; };
 		A00000000000000000000010 /* ../../src/audilink.c in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000010 /* ../../src/audilink.c */; };
 		A00000000000000000000017 /* ../../src/uds/uds.c in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000017 /* ../../src/uds/uds.c */; };
 		A00000000000000000000022 /* ../../src/obd2/obd2.c in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000022 /* ../../src/obd2/obd2.c */; };
@@ -49,6 +50,7 @@
 		B00000000000000000000008 /* ../../platform/apple/AudiLinkDiagnosticsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../../platform/apple/AudiLinkDiagnosticsController.h; sourceTree = SOURCE_ROOT; };
 		B00000000000000000000009 /* ../../platform/apple/AudiLinkDiagnosticsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ../../platform/apple/AudiLinkDiagnosticsController.m; sourceTree = SOURCE_ROOT; };
 		B00000000000000000000024 /* ../../src/link/platform/apple/LinkDiagnosticsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ../../src/link/platform/apple/LinkDiagnosticsController.m; sourceTree = SOURCE_ROOT; };
+		B00000000000000000000025 /* ../../src/link/platform/apple/LinkDiagnosticUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ../../src/link/platform/apple/LinkDiagnosticUI.swift; sourceTree = SOURCE_ROOT; };
 		B00000000000000000000010 /* ../../src/audilink.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ../../src/audilink.c; sourceTree = SOURCE_ROOT; };
 		B00000000000000000000017 /* ../../src/uds/uds.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ../../src/uds/uds.c; sourceTree = SOURCE_ROOT; };
 		B00000000000000000000022 /* ../../src/obd2/obd2.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ../../src/obd2/obd2.c; sourceTree = SOURCE_ROOT; };
@@ -104,6 +106,7 @@
 				B00000000000000000000008 /* ../../platform/apple/AudiLinkDiagnosticsController.h */,
 				B00000000000000000000009 /* ../../platform/apple/AudiLinkDiagnosticsController.m */,
 				B00000000000000000000024 /* ../../src/link/platform/apple/LinkDiagnosticsController.m */,
+				B00000000000000000000025 /* ../../src/link/platform/apple/LinkDiagnosticUI.swift */,
 			);
 			name = "Apple Platform";
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				A00000000000000000000004 /* ../../platform/apple/AudiLinkBLETransport.m in Sources */,
 				A00000000000000000000005 /* ../../platform/apple/AudiLinkDiagnosticsController.m in Sources */,
 				A00000000000000000000024 /* ../../src/link/platform/apple/LinkDiagnosticsController.m in Sources */,
+				A00000000000000000000025 /* ../../src/link/platform/apple/LinkDiagnosticUI.swift in Sources */,
 				A00000000000000000000010 /* ../../src/audilink.c in Sources */,
 				A00000000000000000000017 /* ../../src/uds/uds.c in Sources */,
 				A00000000000000000000022 /* ../../src/obd2/obd2.c in Sources */,
