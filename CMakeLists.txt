@@ -1,6 +1,19 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 cmake_minimum_required(VERSION 3.20)
-project(AUDILINK VERSION 0.2.10 LANGUAGES C)
+file(READ "${CMAKE_CURRENT_SOURCE_DIR}/VERSION" AUDILINK_PROJECT_VERSION)
+string(STRIP "${AUDILINK_PROJECT_VERSION}" AUDILINK_PROJECT_VERSION)
+if(NOT AUDILINK_PROJECT_VERSION MATCHES "^[0-9]+\\.[0-9]+\\.[0-9]+$")
+  message(FATAL_ERROR "VERSION must contain a semantic major.minor.patch version")
+endif()
+project(AUDILINK VERSION "${AUDILINK_PROJECT_VERSION}" LANGUAGES C)
+
+file(READ "${CMAKE_CURRENT_SOURCE_DIR}/include/audilink/audilink.h" AUDILINK_PUBLIC_VERSION_HEADER)
+string(REGEX MATCH
+  "#define[ \t]+AUDILINK_VERSION[ \t]+\"([0-9]+\\.[0-9]+\\.[0-9]+)\""
+  AUDILINK_PUBLIC_VERSION_MATCH "${AUDILINK_PUBLIC_VERSION_HEADER}")
+if(NOT AUDILINK_PUBLIC_VERSION_MATCH OR NOT CMAKE_MATCH_1 STREQUAL PROJECT_VERSION)
+  message(FATAL_ERROR "VERSION and AUDILINK_VERSION must agree")
+endif()
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
@@ -12,10 +25,11 @@ enable_testing()
 add_library(audilink-core STATIC src/audilink.c)
 add_library(AUDILINK::Core ALIAS audilink-core)
 target_include_directories(audilink-core PUBLIC include)
-target_compile_definitions(audilink-core PRIVATE AUDILINK_VERSION="0.2.10")
+target_compile_definitions(audilink-core PRIVATE AUDILINK_VERSION="${PROJECT_VERSION}")
 target_link_libraries(audilink-core PUBLIC LINK::Core)
 
 add_executable(audilink-smoke tests/test_smoke.c)
+target_compile_definitions(audilink-smoke PRIVATE AUDILINK_EXPECTED_VERSION="${PROJECT_VERSION}")
 target_link_libraries(audilink-smoke PRIVATE AUDILINK::Core)
 add_test(NAME audilink-smoke COMMAND audilink-smoke)
 add_executable(audilink-obd2 tests/test_obd2.c)
