@@ -2,7 +2,7 @@
 #ifndef AUDILINK_H
 #define AUDILINK_H
 #ifndef AUDILINK_VERSION
-#define AUDILINK_VERSION "0.2.16"
+#define AUDILINK_VERSION "0.2.17"
 #endif
 #define AUDILINK_BRAND "Audi"
 const char *audilink_product_name(void);
