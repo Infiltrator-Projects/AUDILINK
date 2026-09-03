@@ -96,4 +96,17 @@ if(AUDILINK_BUILD_WINDOWS_DISCOVER)
     PRODUCT_WEBSITE "https://github.com/Infiltrator-Projects/AUDILINK"
     PRODUCT_ICON_PNG "${CMAKE_CURRENT_SOURCE_DIR}/app/ios/AUDILINK/Assets.xcassets/AppIcon.appiconset/AppIcon-60@3x.png")
   target_link_libraries(audilink-discover PRIVATE AUDILINK::Core)
+  if(MSVC)
+    target_compile_options(audilink-discover PRIVATE
+      "/FI${CMAKE_CURRENT_SOURCE_DIR}/src/link/platform/windows/link-discover-theme.h")
+  endif()
+  target_compile_definitions(audilink-discover PRIVATE
+    LINK_THEME_BACKGROUND=0x000C0A09
+    LINK_THEME_PANEL=0x001A1715
+    LINK_THEME_INPUT=0x00141211
+    LINK_THEME_TEXT=0x00F3F2F1
+    LINK_THEME_MUTED=0x00A8A29D
+    LINK_THEME_ACCENT=0x003D1FD9
+    LINK_THEME_ACCENT_TEXT=0x00141211
+    "LINK_PRODUCT_FONT_UI=\"Segoe UI\"")
 endif()
