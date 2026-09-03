@@ -90,6 +90,9 @@ if(AUDILINK_BUILD_WINDOWS_DISCOVER)
     PRODUCT_NAME "AUDILINK" PRODUCT_SLUG "audilink" WINDOW_CLASS "AUDILINKDiscoverWindow"
     PRODUCT_VERSION "${PROJECT_VERSION}" PRODUCT_COPYRIGHT "Copyright (C) 2026 Shannon Smith"
     PRODUCT_SUBTITLE "Audi Diagnostics"
+    PRODUCT_DESCRIPTION "A C-first, open-source Audi vehicle diagnostics platform."
+    PRODUCT_AUTHORS "Shannon Smith"
+    PRODUCT_LICENSE_NAME "GPL-3.0-or-later"
     PRODUCT_WEBSITE "https://github.com/Infiltrator-Projects/AUDILINK"
     PRODUCT_ICON_PNG "${CMAKE_CURRENT_SOURCE_DIR}/app/ios/AUDILINK/Assets.xcassets/AppIcon.appiconset/AppIcon-60@3x.png")
   target_link_libraries(audilink-discover PRIVATE AUDILINK::Core)
