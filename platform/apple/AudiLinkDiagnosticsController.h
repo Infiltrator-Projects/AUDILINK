@@ -10,6 +10,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AudiLinkDiagnosticsController : NSObject
 @property(nonatomic, weak, nullable) id<AudiLinkDiagnosticsControllerDelegate> delegate;
+@property(nonatomic, copy, readonly) NSString *linkVersionText;
 @property(nonatomic, copy, readonly) NSString *statusText;
 @property(nonatomic, copy, readonly, nullable) NSString *peripheralName;
 @property(nonatomic, copy, readonly, nullable) NSString *adapterIdentifier;
