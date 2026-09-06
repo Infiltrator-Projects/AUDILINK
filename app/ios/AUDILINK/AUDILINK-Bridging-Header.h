@@ -2,3 +2,4 @@
 #import "../../../platform/apple/AudiLinkDiagnosticsController.h"
 #import "audilink/audilink.h"
 #include "link/obd2.h"
+#include "link/i18n.h"
