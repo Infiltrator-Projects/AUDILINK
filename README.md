@@ -1,6 +1,6 @@
 # AUDILINK
 
-**Project copyright:** © 2000–2026 Shannon Smith
+**Project copyright:** © 2000-2026 Shannon Smith
 
 AUDILINK is the Audi-specific member of the LINK diagnostic family.
 

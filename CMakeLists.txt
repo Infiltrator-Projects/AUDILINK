@@ -88,7 +88,7 @@ if(AUDILINK_BUILD_WINDOWS_DISCOVER)
   endif()
   link_add_windows_discover(audilink-discover
     PRODUCT_NAME "AUDILINK" PRODUCT_SLUG "audilink" WINDOW_CLASS "AUDILINKDiscoverWindow"
-    PRODUCT_VERSION "${PROJECT_VERSION}" PRODUCT_COPYRIGHT "Copyright (C) 2026 Shannon Smith"
+    PRODUCT_VERSION "${PROJECT_VERSION}" PRODUCT_COPYRIGHT "Copyright (C) 2000-2026 Shannon Smith"
     PRODUCT_SUBTITLE "Audi Diagnostics"
     PRODUCT_DESCRIPTION "A C-first, open-source Audi vehicle diagnostics platform."
     PRODUCT_AUTHORS "Shannon Smith"
