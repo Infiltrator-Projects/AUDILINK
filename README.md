@@ -2,6 +2,14 @@
 
 AUDILINK is the Audi-specific member of the LINK diagnostic family.
 
+## Engineering ethos
+
+What should an Audi diagnostic product add without becoming another copy of the generic diagnostics stack? AUDILINK turns Audi-specific vehicle evidence into product behaviour while consuming the exact shared LINK engine for standards and common application mechanics.
+
+Transport, OBD, UDS, sequencing, safety and generic operator workflows remain in LINK. Audi/VAG-specific identities, topology, definitions and verified manufacturer behaviour remain here. External databases, captures, documentation and mature tools are evidence rather than authorities to copy blindly; uncertain manufacturer data stays raw or unknown until it is justified.
+
+The project favours the strongest evidence-backed implementation rather than the newest one. Generic improvements belong once in LINK, while this repository remains responsible for the Audi-specific knowledge it can explain and test.
+
 ## Architecture
 
 AUDILINK owns only Audi-specific diagnostic behaviour: vehicle/profile
