@@ -1,26 +1,38 @@
 # Validation
 
-## Evidence model
+## Current automated evidence
 
-Build, unit, integration, lifecycle and physical-hardware evidence prove different things and are recorded separately.
+AUDILINK CI builds the product against its exact LINK dependency and directly tests:
 
-## Automated gates
+- product/version smoke integration;
+- OBD-II facade behaviour;
+- generic diagnostic flow.
 
-- .github/workflows/ci.yml
-- .github/workflows/release.yml
+Platform workflows also compile/package the supported product faces.
 
-tests/ currently proves generic diagnostics, OBD-II integration and product smoke behaviour. Audi-specific tests should appear with Audi-specific functionality.
+## What this proves
 
-## Manual/environment evidence
+This establishes that AUDILINK is a working LINK-backed product and that generic standards behaviour is exposed correctly.
 
-Physical Audi/VAG vehicles, adapters and network behaviour remain real-hardware evidence boundaries.
+It does not prove Audi/VAG-specific module topology, proprietary parameters, routing conventions or enhanced procedures.
 
-Do not promote fixture/simulator/chroot evidence into a broader claim than the environment actually exercised.
+## Manufacturer evidence levels
 
-## Release/publication criterion
+1. authoritative/public documented source;
+2. sanitised capture with known vehicle/module context;
+3. repeatable physical-vehicle observation;
+4. regression fixture derived from verified evidence.
 
-The exact source revision and pinned dependencies/releases intended for publication must pass required gates. Artifacts must be traceable to that identity and documentation must not advertise known-failing or merely planned behaviour.
+A generic protocol assumption without Audi/VAG evidence remains generic.
 
-## Regression rule
+## Safety validation
 
-Reproducible defects gain permanent automated coverage where practical, at the narrowest layer that captures the failure.
+Any manufacturer-specific request permission added here requires product-level tests proving its scope. Codec availability in LINK is not permission.
+
+## Physical validation
+
+Real Bluetooth/J2534/vehicle behaviour requires physical adapters and vehicles. Hosted builds and simulator tests are integration evidence only.
+
+## Release criterion
+
+The exact AUDILINK source and LINK gitlink must pass required gates. Documentation must not describe planned or generic-only behaviour as verified manufacturer capability.

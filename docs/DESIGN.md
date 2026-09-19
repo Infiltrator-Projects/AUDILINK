@@ -2,27 +2,34 @@
 
 ## First-principles position
 
-AUDILINK is designed from the behaviour it must own. Existing tools, standards and hosted services are evidence or mechanisms, not specifications to clone or dependencies allowed to redefine project policy.
+AUDILINK should be an Audi product, not a fork of LINK with duplicated generic diagnostics.
 
 ## Goals
 
-- remain a thin manufacturer face over LINK
-- add Audi/VAG knowledge only from traceable evidence
-- avoid private generic protocol/application copies
-- keep unsupported manufacturer behaviour explicit
+- reuse one protocol/safety/application engine across vehicle products;
+- add Audi/VAG-specific knowledge only from traceable evidence;
+- keep Linux, Windows and iPhone faces over one product core;
+- preserve unknown/unsupported states instead of guessing;
+- inherit deny-by-default request safety from LINK.
 
-## Non-goals
+## Thin-product rule
 
-Generic OBD success does not constitute Audi manufacturer coverage, and unverified VAG definitions are not guessed merely to populate a catalogue.
+Generic OBD, UDS, ISO-TP, transport and common UI sequencing belong in LINK even when AUDILINK is the first product that needs an improvement.
 
-## Dependency policy
+A small manufacturer repository is not incomplete merely because shared behaviour lives below it.
 
-Prefer first-party C/C++ implementation for portable/native logic where appropriate and exact pinned first-party shared dependencies for common contracts. External tools/services are acceptable when their interface is useful and replaceable; semantics remain documented and testable in this repository.
+## Evidence rule
 
-## Failure philosophy
+Audi/VAG-specific definitions require evidence with known scope. A generic UDS DID/service number is not enough to assert Audi meaning. Captures or external-tool observations are evidence to reconcile, not data to copy blindly.
 
-Missing, unsupported, stale and failed are distinct states. The project prefers a visible refusal or unavailable result to manufacturing a plausible success. Destructive/publication/manufacturer actions require stronger evidence than read-only discovery.
+## Platform rule
 
-## Decision quality
+C/C++ are preferred for first-party native/domain code. Swift and Objective-C remain legitimate Apple boundaries. Platform shells should render and adapt shared state rather than duplicate diagnostic sequencing.
 
-A design change should identify ownership, alternatives, evidence and validation. Newness alone is not a benefit; a change should improve correctness, resilience, safety, performance, fidelity or maintainability.
+## Failure rule
+
+Unknown manufacturer values stay raw or unavailable. Failed scanning remains different from a clean scan. Adding a decoder does not enable its request automatically.
+
+## Shared-improvement rule
+
+When a needed capability is generic, improve LINK and remove local duplication once LINK's implementation is at least as strong.

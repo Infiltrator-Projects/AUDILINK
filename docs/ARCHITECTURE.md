@@ -2,31 +2,50 @@
 
 ## Purpose
 
-AUDILINK is the Audi manufacturer product face over the shared LINK diagnostics engine.
+AUDILINK is the Audi manufacturer product face over the shared LINK diagnostics engine. Generic transport, standards, sequencing, safety and shared application behaviour stay in LINK; Audi/VAG-specific identity and evidence belong here.
 
-## System decomposition
+## Dependency hierarchy
 
-- Audi product facade
-- exact LINK dependency
-- Linux/iPhone/Windows-facing product surfaces
-- generic diagnostics integration tests
-- Audi/VAG-specific knowledge layer as it grows
+```text
+Infiltratr Common
+        ↓
+       LINK
+        ↓
+    AUDILINK
+```
 
-## Ownership boundaries
+The build links `audilink-core` publicly against `LINK::Core`. AUDILINK therefore inherits one exact shared dependency chain rather than choosing Common independently.
 
-LINK owns transports, standards, sequencing, safety and common application behaviour. AUDILINK owns Audi/VAG-specific identity, topology, definitions and manufacturer interpretation.
+## Product core
 
-Mechanisms supplied by GitHub, APT, an operating system, LINK/Common or a platform toolkit sit behind explicit project-owned policy. The external mechanism must not silently become the source of product meaning.
+`src/audilink.c` and public headers under `include/audilink/` define product identity and the Audi-facing facade. Local OBD/UDS source areas must remain compatibility/product glue only; standards semantics belong in LINK.
 
-## Source of truth
+## Platform faces
 
-Code, tests, pinned dependency/release identities and generated artifacts define executable/publication behaviour. Documentation defines ownership and support boundaries. Specialist files may refine a subsystem but must not contradict this model.
+### Linux
 
-## Change discipline
+The optional GTK4 shell links AUDILINK::Core and uses LINK's shared Linux shell/adapter support. Product resources, icon and identity remain local.
 
-Keep generic behaviour in its shared owner and local behaviour in this repository. Unknown, unavailable and unsupported states stay explicit. Changes to persistent/publication identity require an intentional version or migration decision.
+### Windows
 
-## Specialist documentation
+Windows Discover is constructed through LINK's shared native Discover implementation. AUDILINK supplies Audi identity/theme while generic discovery, safety/evidence and Win32 mechanics remain shared.
 
-- docs/GENERIC_BASELINE.md
-- docs/OBD2.md
+### iPhone
+
+SwiftUI owns presentation. Objective-C transport/controller code bridges Apple platform mechanics into the shared diagnostic engine. Apple code must not become a private protocol stack.
+
+## Version identity
+
+The root `VERSION` and public AUDILINK version macro must agree at configure time. Version drift is a build failure.
+
+## Tests
+
+- product/version smoke test;
+- standard OBD-II product exposure;
+- generic diagnostics integration.
+
+These prove the shared standards baseline through AUDILINK. They do not establish Audi/VAG enhanced diagnostic coverage.
+
+## Ownership rule
+
+Audi/VAG-specific VIN/profile/module/network/parameter/procedure knowledge belongs here only when evidence justifies it. Until then, thinness is preferable to guessed catalogue content.

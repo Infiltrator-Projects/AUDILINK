@@ -1,28 +1,28 @@
 # Roadmap
 
-This document states direction, not dates. Exact current support is defined by source and validation evidence.
-
 ## Current foundation
 
-- maintain the generic LINK-backed product baseline
-- verify OBD/generic diagnostics integration and application smoke paths
-- keep the exact LINK revision pinned
+- exact LINK dependency and AUDILINK::Core facade;
+- optional native GTK4 Linux shell;
+- shared LINK Win32 Discover face with Audi identity;
+- native iPhone face and Apple bridge;
+- generic OBD and diagnostic integration tests;
+- single-source checked product version.
 
 ## Near-term priorities
 
-- add Audi/VAG-specific module/network knowledge from verified evidence
-- build manufacturer-specific tests as evidence becomes available
-- keep common product behaviour sourced from LINK
+- gather Audi/VAG-specific network/module evidence;
+- add manufacturer tests together with manufacturer implementation;
+- keep generic OBD/UDS compatibility code converging downward into LINK;
+- preserve shared safety and application flow rather than creating product variants.
 
 ## Longer-term direction
 
-- expand Audi platform coverage with profile-aware knowledge
-- add enhanced diagnostics only when semantics and safety can be demonstrated
-
-## Admission rule
-
-New work needs clear ownership and a realistic validation path. A feature is not "supported" merely because an external service, generic protocol or neighbouring product can perform something similar.
+- VIN/profile-aware Audi platform selection;
+- verified enhanced live data and module inventories;
+- manufacturer procedures only with understood request/response/safety semantics;
+- broader platform/model coverage with explicit provenance.
 
 ## Completion rule
 
-Implementation, tests, user-visible behaviour and maintained documentation must agree before an item is complete.
+A manufacturer feature is complete only when evidence, implementation, safety classification, regression coverage and product presentation agree.
