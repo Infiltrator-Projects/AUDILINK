@@ -143,6 +143,16 @@ jobs:
           dpkg-deb -c "$deb" | grep -F './usr/share/applications/audilink.desktop' >/dev/null
           dpkg-deb -c "$deb" | grep -F './usr/lib/udev/rules.d/60-audilink-openport2.rules' >/dev/null
 
+      - name: Verify native Linux source build
+        shell: bash
+        run: |
+          set -euo pipefail
+          cmake -S . -B build-native -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DAUDILINK_BUILD_LINUX_GUI=ON -DAUDILINK_BUILD_PROFILE=native -DBUILD_TESTING=OFF
+          cmake --build build-native --parallel
+          rm -rf native-stage
+          DESTDIR="$PWD/native-stage" cmake --install build-native
+          test -x native-stage/usr/bin/audilink
+
   windows-gui:
     name: Windows Discover GUI
     runs-on: windows-latest
@@ -179,14 +189,4 @@ jobs:
           xcodebuild -project app/ios/AUDILINK.xcodeproj -scheme AUDILINK -configuration Release \
             -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO \
             MARKETING_VERSION="$version" AUDILINK_SOURCE_REVISION="$GITHUB_SHA" build
-
-      - name: Verify native Linux source build
-        shell: bash
-        run: |
-          set -euo pipefail
-          cmake -S . -B build-native -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DAUDILINK_BUILD_LINUX_GUI=ON -DAUDILINK_BUILD_PROFILE=native -DBUILD_TESTING=OFF
-          cmake --build build-native --parallel
-          rm -rf native-stage
-          DESTDIR="$PWD/native-stage" cmake --install build-native
-          test -x native-stage/usr/bin/audilink
 
