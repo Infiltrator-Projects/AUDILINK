@@ -4,6 +4,8 @@ This file records user-visible, compatibility, architecture and validation chang
 
 ## Unreleased
 
+- Advance the exact LINK dependency to released LINK 0.15.32, carrying Infiltratr Common 1.19.10 while preserving Audi-specific branding and icon identity.
+
 - Canonical documentation baseline aligned with the Infiltrator project family.
 
 ## Policy
