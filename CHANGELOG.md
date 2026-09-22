@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.25 — 2026-09-22
+
+- Advance AUDILINK to the canonical LINK 0.15.54 release at 38826aa2dca7, which pins Infiltratr Common 1.19.23, and synchronise Apple embedded-LINK provenance with the exact gitlink.
+
 ## 0.2.24 — 2026-09-22
 
 - Advance AUDILINK to LINK 0.15.51, which pins Infiltratr Common 1.19.22, and synchronise the Apple embedded-LINK provenance with the exact gitlink.
