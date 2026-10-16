@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A00000000000000000000001 /* AUDILINK/AUDILINKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000001 /* AUDILINK/AUDILINKApp.swift */; };
-		A00000000000000000000002 /* AUDILINK/ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000002 /* AUDILINK/ContentView.swift */; };
-		A00000000000000000000003 /* AUDILINK/ConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000003 /* AUDILINK/ConnectionViewModel.swift */; };
+		A00000000000000000000001 /* AUDILink/AUDILinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000001 /* AUDILink/AUDILinkApp.swift */; };
+		A00000000000000000000002 /* AUDILink/ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000002 /* AUDILink/ContentView.swift */; };
+		A00000000000000000000003 /* AUDILink/ConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000003 /* AUDILink/ConnectionViewModel.swift */; };
 		A00000000000000000000004 /* ../../platform/apple/AudiLinkBLETransport.m in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000007 /* ../../platform/apple/AudiLinkBLETransport.m */; };
 		A00000000000000000000005 /* ../../platform/apple/AudiLinkDiagnosticsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000009 /* ../../platform/apple/AudiLinkDiagnosticsController.m */; };
 		A00000000000000000000024 /* ../../src/link/platform/apple/LinkDiagnosticsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000024 /* ../../src/link/platform/apple/LinkDiagnosticsController.m */; };
@@ -19,7 +19,7 @@
 		A00000000000000000000022 /* ../../src/obd2/obd2.c in Sources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000022 /* ../../src/obd2/obd2.c */; };
 		A00000000000000000000030 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00000000000000000000030 /* CoreBluetooth.framework */; };
 		A00000000000000000000031 /* libInfiltratrCommonPortable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A110000000000000000005 /* libInfiltratrCommonPortable.a */; };
-		A00000000000000000000032 /* AUDILINK/Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000032 /* AUDILINK/Assets.xcassets */; };
+		A00000000000000000000032 /* AUDILink/Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B00000000000000000000032 /* AUDILink/Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B00000000000000000000001 /* AUDILINK/AUDILINKApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUDILINK/AUDILINKApp.swift; sourceTree = SOURCE_ROOT; };
-		B00000000000000000000002 /* AUDILINK/ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUDILINK/ContentView.swift; sourceTree = SOURCE_ROOT; };
-		B00000000000000000000003 /* AUDILINK/ConnectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUDILINK/ConnectionViewModel.swift; sourceTree = SOURCE_ROOT; };
-		B00000000000000000000004 /* AUDILINK/AUDILINK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AUDILINK/AUDILINK-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		B00000000000000000000001 /* AUDILink/AUDILinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUDILink/AUDILinkApp.swift; sourceTree = SOURCE_ROOT; };
+		B00000000000000000000002 /* AUDILink/ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUDILink/ContentView.swift; sourceTree = SOURCE_ROOT; };
+		B00000000000000000000003 /* AUDILink/ConnectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUDILink/ConnectionViewModel.swift; sourceTree = SOURCE_ROOT; };
+		B00000000000000000000004 /* AUDILink/AUDILink-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AUDILink/AUDILink-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		B00000000000000000000005 /* ../../platform/apple/AudiLinkBLETransport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../../platform/apple/AudiLinkBLETransport.h; sourceTree = SOURCE_ROOT; };
 		B00000000000000000000006 /* ../../platform/apple/AudiLinkBLETransport+AUDILINK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "../../platform/apple/AudiLinkBLETransport+AUDILINK.h"; sourceTree = SOURCE_ROOT; };
 		B00000000000000000000007 /* ../../platform/apple/AudiLinkBLETransport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ../../platform/apple/AudiLinkBLETransport.m; sourceTree = SOURCE_ROOT; };
@@ -55,8 +55,8 @@
 		B00000000000000000000017 /* ../../src/uds/uds.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ../../src/uds/uds.c; sourceTree = SOURCE_ROOT; };
 		B00000000000000000000022 /* ../../src/obd2/obd2.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ../../src/obd2/obd2.c; sourceTree = SOURCE_ROOT; };
 		B00000000000000000000030 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		B00000000000000000000032 /* AUDILINK/Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AUDILINK/Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		B00000000000000000000040 /* AUDILINK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AUDILINK.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00000000000000000000032 /* AUDILink/Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AUDILink/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		B00000000000000000000040 /* AUDILink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AUDILink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A110000000000000000004 /* InfiltratrCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = InfiltratrCommon.xcodeproj; path = "../../src/link/src/infiltratr-common/apple/InfiltratrCommon.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -79,7 +79,7 @@
 				E00000000000000000000002 /* App */,
 				E00000000000000000000003 /* Apple Platform */,
 				E00000000000000000000004 /* Portable Core */,
-				E00000000000000000000005 /* Infiltratr Common */,
+				E00000000000000000000005 /* Libraries */,
 				E00000000000000000000006 /* Frameworks */,
 				E00000000000000000000007 /* Products */,
 			);
@@ -88,11 +88,11 @@
 		E00000000000000000000002 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				B00000000000000000000001 /* AUDILINK/AUDILINKApp.swift */,
-				B00000000000000000000002 /* AUDILINK/ContentView.swift */,
-				B00000000000000000000003 /* AUDILINK/ConnectionViewModel.swift */,
-				B00000000000000000000004 /* AUDILINK/AUDILINK-Bridging-Header.h */,
-				B00000000000000000000032 /* AUDILINK/Assets.xcassets */,
+				B00000000000000000000001 /* AUDILink/AUDILinkApp.swift */,
+				B00000000000000000000002 /* AUDILink/ContentView.swift */,
+				B00000000000000000000003 /* AUDILink/ConnectionViewModel.swift */,
+				B00000000000000000000004 /* AUDILink/AUDILink-Bridging-Header.h */,
+				B00000000000000000000032 /* AUDILink/Assets.xcassets */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -121,12 +121,12 @@
 			name = "Portable Core";
 			sourceTree = "<group>";
 		};
-		E00000000000000000000005 /* Infiltratr Common */ = {
+		E00000000000000000000005 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
 				C0A110000000000000000004 /* InfiltratrCommon.xcodeproj */,
 			);
-			name = "Infiltratr Common";
+			name = "Libraries";
 			sourceTree = "<group>";
 		};
 		E00000000000000000000006 /* Frameworks */ = {
@@ -140,7 +140,7 @@
 		E00000000000000000000007 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B00000000000000000000040 /* AUDILINK.app */,
+				B00000000000000000000040 /* AUDILink.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,9 +171,9 @@
 			dependencies = (
 				C0A110000000000000000007 /* PBXTargetDependency */,
 			);
-			name = AUDILINK;
-			productName = AUDILINK;
-			productReference = B00000000000000000000040 /* AUDILINK.app */;
+			name = AUDILink;
+			productName = AUDILink;
+			productReference = B00000000000000000000040 /* AUDILink.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -244,7 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A00000000000000000000032 /* AUDILINK/Assets.xcassets in Resources */,
+				A00000000000000000000032 /* AUDILink/Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,9 +255,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A00000000000000000000001 /* AUDILINK/AUDILINKApp.swift in Sources */,
-				A00000000000000000000002 /* AUDILINK/ContentView.swift in Sources */,
-				A00000000000000000000003 /* AUDILINK/ConnectionViewModel.swift in Sources */,
+				A00000000000000000000001 /* AUDILink/AUDILinkApp.swift in Sources */,
+				A00000000000000000000002 /* AUDILink/ContentView.swift in Sources */,
+				A00000000000000000000003 /* AUDILink/ConnectionViewModel.swift in Sources */,
 				A00000000000000000000004 /* ../../platform/apple/AudiLinkBLETransport.m in Sources */,
 				A00000000000000000000005 /* ../../platform/apple/AudiLinkDiagnosticsController.m in Sources */,
 				A00000000000000000000024 /* ../../src/link/platform/apple/LinkDiagnosticsController.m in Sources */,
@@ -335,7 +335,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.29;
+				MARKETING_VERSION = 0.2.30;
 				AUDILINK_SOURCE_REVISION = unavailable;
 				LINK_SOURCE_REVISION = unavailable;
 				ONLY_ACTIVE_ARCH = YES;
@@ -343,7 +343,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "AUDILINK/AUDILINK-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AUDILink/AUDILink-Bridging-Header.h";
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -381,14 +381,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.29;
+				MARKETING_VERSION = 0.2.30;
 				AUDILINK_SOURCE_REVISION = unavailable;
 				LINK_SOURCE_REVISION = unavailable;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.InfiltratorProjects.AUDILINK";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "AUDILINK/AUDILINK-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AUDILink/AUDILink-Bridging-Header.h";
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

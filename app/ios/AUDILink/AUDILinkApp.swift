@@ -2,7 +2,7 @@
 import SwiftUI
 
 @main
-struct AUDILINKApp: App {
+struct AUDILinkApp: App {
     var body: some Scene {
         WindowGroup { ContentView() }
     }

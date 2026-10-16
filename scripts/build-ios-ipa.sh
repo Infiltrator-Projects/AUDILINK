@@ -25,8 +25,8 @@ package="$(mktemp -d "${TMPDIR:-/tmp}/audilink-payload.XXXXXX")"
 trap 'rm -rf "$derived" "$package"' EXIT
 
 xcodebuild \
-  -project "$repo_root/app/ios/AUDILINK.xcodeproj" \
-  -scheme AUDILINK \
+  -project "$repo_root/app/ios/AUDILink.xcodeproj" \
+  -scheme AUDILink \
   -configuration Release \
   -sdk iphoneos \
   -destination 'generic/platform=iOS' \
@@ -39,7 +39,7 @@ xcodebuild \
   CODE_SIGN_IDENTITY='' \
   build
 
-app="$derived/Build/Products/Release-iphoneos/AUDILINK.app"
+app="$derived/Build/Products/Release-iphoneos/AUDILink.app"
 test -d "$app"
 test -x "$app/AUDILink"
 /usr/bin/lipo -info "$app/AUDILink" | grep -q arm64
@@ -49,7 +49,7 @@ if [[ -z "$out_name" ]]; then
 fi
 ipa="$out_dir/$out_name"
 mkdir -p "$package/Payload"
-/usr/bin/ditto "$app" "$package/Payload/AUDILINK.app"
+/usr/bin/ditto "$app" "$package/Payload/AUDILink.app"
 (
   cd "$package"
   /usr/bin/zip -qry "$ipa" Payload
