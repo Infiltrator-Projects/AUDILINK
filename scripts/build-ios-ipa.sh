@@ -41,11 +41,11 @@ xcodebuild \
 
 app="$derived/Build/Products/Release-iphoneos/AUDILINK.app"
 test -d "$app"
-test -x "$app/AUDILINK"
-/usr/bin/lipo -info "$app/AUDILINK" | grep -q arm64
+test -x "$app/AUDILink"
+/usr/bin/lipo -info "$app/AUDILink" | grep -q arm64
 
 if [[ -z "$out_name" ]]; then
-  out_name="AUDILINK-${version}-unsigned.ipa"
+  out_name="AUDILink-${version}-unsigned.ipa"
 fi
 ipa="$out_dir/$out_name"
 mkdir -p "$package/Payload"

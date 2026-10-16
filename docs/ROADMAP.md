@@ -2,9 +2,9 @@
 
 ## Current foundation
 
-- exact LINK dependency and AUDILINK::Core facade;
+- exact Link dependency and AUDILink::Core facade;
 - optional native GTK4 Linux shell;
-- shared LINK Win32 Discover face with Audi identity;
+- shared Link Win32 Discover face with Audi identity;
 - native iPhone face and Apple bridge;
 - generic OBD and diagnostic integration tests;
 - single-source checked product version.
@@ -13,7 +13,7 @@
 
 - gather Audi/VAG-specific network/module evidence;
 - add manufacturer tests together with manufacturer implementation;
-- keep generic OBD/UDS compatibility code converging downward into LINK;
+- keep generic OBD/UDS compatibility code converging downward into Link;
 - preserve shared safety and application flow rather than creating product variants.
 
 ## Longer-term direction

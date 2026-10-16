@@ -1,14 +1,14 @@
-# Contributing to AUDILINK
+# Contributing to AUDILink
 
-AUDILINK is a manufacturer product face over the shared LINK diagnostics engine. Contributions must preserve the dependency direction **Common → LINK → AUDILINK** and keep product-neutral diagnostics out of this repository.
+AUDILink is a manufacturer product face over the shared Link diagnostics engine. Contributions must preserve the dependency direction **Common → Link → AUDILink** and keep product-neutral diagnostics out of this repository.
 
 ## Ownership
 
 - Common owns broadly reusable non-automotive primitives.
-- LINK owns generic transports, OBD, ISO-TP, UDS/KWP/DoIP, diagnostic sequencing, evidence/safety policy and common application behaviour.
-- AUDILINK owns Audi/VAG-specific identity, network/module knowledge, verified definitions, product presentation and genuinely manufacturer-specific behaviour.
-- If a change is useful across manufacturers, improve LINK rather than creating a private AUDILINK copy.
-- Do not modify the nested LINK/Common source from this repository as a substitute for updating the dependency deliberately.
+- Link owns generic transports, OBD, ISO-TP, UDS/KWP/DoIP, diagnostic sequencing, evidence/safety policy and common application behaviour.
+- AUDILink owns Audi/VAG-specific identity, network/module knowledge, verified definitions, product presentation and genuinely manufacturer-specific behaviour.
+- If a change is useful across manufacturers, improve Link rather than creating a private AUDILink copy.
+- Do not modify the nested Link/Common source from this repository as a substitute for updating the dependency deliberately.
 
 ## Languages and platform boundaries
 
@@ -37,7 +37,7 @@ cmake --build build --parallel
 ctest --test-dir build --output-on-failure
 ```
 
-Product changes should keep LINK's own shared test suite healthy through the pinned dependency and add AUDILINK-level tests for manufacturer semantics introduced here.
+Product changes should keep Link's own shared test suite healthy through the pinned dependency and add AUDILink-level tests for manufacturer semantics introduced here.
 
 ## Documentation
 
@@ -47,7 +47,7 @@ Do not inflate documentation with guessed manufacturer coverage merely to match 
 
 ## Repository policy
 
-`main` is the working development/release branch. Published tags/releases are immutable. The exact AUDILINK source and LINK gitlink together define a tested product revision.
+`main` is the working development/release branch. Published tags/releases are immutable. The exact AUDILink source and Link gitlink together define a tested product revision.
 
 ## Licence
 

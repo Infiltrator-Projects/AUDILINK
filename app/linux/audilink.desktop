@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=AUDILINK
+Name=AUDILink
 Comment=Audi vehicle diagnostics
 Exec=audilink
 Icon=audilink

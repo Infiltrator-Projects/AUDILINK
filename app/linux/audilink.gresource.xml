@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/com/github/Infiltrator-Projects/AUDILINK">
+  <gresource prefix="/com/github/Infiltrator-Projects/AUDILink">
     <file alias="audilink-emblem.png">assets/audilink-emblem.png</file>
   </gresource>
 </gresources>

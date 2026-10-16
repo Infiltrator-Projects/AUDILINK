@@ -2,7 +2,7 @@
 
 ## Current automated evidence
 
-AUDILINK CI builds the product against its exact LINK dependency and directly tests:
+AUDILink CI builds the product against its exact Link dependency and directly tests:
 
 - product/version smoke integration;
 - OBD-II facade behaviour;
@@ -12,7 +12,7 @@ Platform workflows also compile/package the supported product faces.
 
 ## What this proves
 
-This establishes that AUDILINK is a working LINK-backed product and that generic standards behaviour is exposed correctly.
+This establishes that AUDILink is a working Link-backed product and that generic standards behaviour is exposed correctly.
 
 It does not prove Audi/VAG-specific module topology, proprietary parameters, routing conventions or enhanced procedures.
 
@@ -27,7 +27,7 @@ A generic protocol assumption without Audi/VAG evidence remains generic.
 
 ## Safety validation
 
-Any manufacturer-specific request permission added here requires product-level tests proving its scope. Codec availability in LINK is not permission.
+Any manufacturer-specific request permission added here requires product-level tests proving its scope. Codec availability in Link is not permission.
 
 ## Physical validation
 
@@ -35,7 +35,7 @@ Real Bluetooth/J2534/vehicle behaviour requires physical adapters and vehicles. 
 
 ## Release criterion
 
-The exact AUDILINK source and LINK gitlink must pass required gates. Documentation must not describe planned or generic-only behaviour as verified manufacturer capability.
+The exact AUDILink source and Link gitlink must pass required gates. Documentation must not describe planned or generic-only behaviour as verified manufacturer capability.
 
 ## Qualified publication
 

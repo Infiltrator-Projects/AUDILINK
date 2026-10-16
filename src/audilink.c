@@ -9,6 +9,6 @@
 #include "link/platform/apple/LinkPortableCore.c"
 #endif
 
-const char *audilink_product_name(void){return "AUDILINK";}
+const char *audilink_product_name(void){return "AUDILink";}
 const char *audilink_brand_name(void){return "Audi";}
 const char *audilink_version(void){return AUDILINK_VERSION;}

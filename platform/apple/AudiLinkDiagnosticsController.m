@@ -13,7 +13,7 @@
         liveStatusText:@"Live diagnostics active"
         simulatedLiveStatusText:@"Simulated diagnostics active"
         standardVINStatusText:@"Reading standard VIN"
-        simulatedAdapterIdentifier:@"ELM327 v2.3 AUDILINK SIM"
+        simulatedAdapterIdentifier:@"ELM327 v2.3 AUDILink SIM"
         simulatedVIN:@"WAUZZZ8K9DA123456"];
     return self;
 }

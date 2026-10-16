@@ -54,6 +54,6 @@ int main(void)
     audilink_telemetry_store_init(&telemetry);
     CHECK(audilink_telemetry_store_history_count(&telemetry) == 0U);
 
-    puts("AUDILINK generic LINK diagnostics baseline passed");
+    puts("AUDILink generic Link diagnostics baseline passed");
     return 0;
 }

@@ -2,7 +2,7 @@
 
 ## First-principles position
 
-AUDILINK should be an Audi product, not a fork of LINK with duplicated generic diagnostics.
+AUDILink should be an Audi product, not a fork of Link with duplicated generic diagnostics.
 
 ## Goals
 
@@ -10,11 +10,11 @@ AUDILINK should be an Audi product, not a fork of LINK with duplicated generic d
 - add Audi/VAG-specific knowledge only from traceable evidence;
 - keep Linux, Windows and iPhone faces over one product core;
 - preserve unknown/unsupported states instead of guessing;
-- inherit deny-by-default request safety from LINK.
+- inherit deny-by-default request safety from Link.
 
 ## Thin-product rule
 
-Generic OBD, UDS, ISO-TP, transport and common UI sequencing belong in LINK even when AUDILINK is the first product that needs an improvement.
+Generic OBD, UDS, ISO-TP, transport and common UI sequencing belong in Link even when AUDILink is the first product that needs an improvement.
 
 A small manufacturer repository is not incomplete merely because shared behaviour lives below it.
 
@@ -32,4 +32,4 @@ Unknown manufacturer values stay raw or unavailable. Failed scanning remains dif
 
 ## Shared-improvement rule
 
-When a needed capability is generic, improve LINK and remove local duplication once LINK's implementation is at least as strong.
+When a needed capability is generic, improve Link and remove local duplication once Link's implementation is at least as strong.

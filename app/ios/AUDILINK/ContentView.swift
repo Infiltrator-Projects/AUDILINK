@@ -30,18 +30,18 @@ private let productTheme = LinkDiagnosticTheme(
         title2: .title2.bold()))
 
 private let productAppearance = LinkStandardProductAppearance(
-    productName: "AUDILINK",
+    productName: "AUDILink",
     manufacturerName: "Audi",
-    subtitle: "AUDI · LINK DIAGNOSTICS",
+    subtitle: "AUDI · Link DIAGNOSTICS",
     emblemAssetName: "AUDILINKEmblem",
     theme: productTheme,
-    summary: "Open-source Audi diagnostics built as a branded product face on the shared LINK engine.",
+    summary: "Open-source Audi diagnostics built as a branded product face on the shared Link engine.",
     authors: ["Shannon Smith"],
     copyrightShort: "© 1993-2026 Shannon Smith",
     copyrightFull: "Copyright © 1993-2026 Shannon Smith",
-    website: URL(string: "https://github.com/Infiltrator-Projects/AUDILINK"),
+    website: URL(string: "https://github.com/Infiltrator-Projects/AUDILink"),
     licenseName: "GPL-3.0-or-later",
-    licenseText: "AUDILINK is free software licensed under GNU GPL v3 or later. See LICENSE in the source package for the complete licence text.",
+    licenseText: "AUDILink is free software licensed under GNU GPL v3 or later. See LICENSE in the source package for the complete licence text.",
     credits: ["Shannon Smith — Author and project maintainer"])
 
 struct ContentView: View {

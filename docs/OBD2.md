@@ -1,6 +1,6 @@
 # Standard OBD-II baseline
 
-AUDILINK inherits standards-based emissions diagnostics from its pinned LINK
+AUDILink inherits standards-based emissions diagnostics from its pinned Link
 dependency before any Audi/VAG proprietary data is added.
 
 The baseline includes supported-PID discovery, standard current-data and
@@ -8,7 +8,7 @@ freeze-frame request/decoding, readiness, VIN, stored/pending/permanent DTC
 reads, generic SAE DTC decoding/knowledge, and OBDonUDS PID/DID mapping.
 
 This is standard OBD coverage, not a claim of Audi/VAG proprietary diagnostics.
-Those brand-specific identifiers and workflows belong in AUDILINK when
+Those brand-specific identifiers and workflows belong in AUDILink when
 evidence supports them.
 
 The `audilink-obd2` CI test proves request generation for 0100, 010C, 0902

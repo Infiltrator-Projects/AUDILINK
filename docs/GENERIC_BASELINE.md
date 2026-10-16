@@ -1,10 +1,10 @@
 # Generic diagnostic baseline
 
-AUDILINK is intentionally not a polished Audi/VAG-specific product yet, but it
+AUDILink is intentionally not a polished Audi/VAG-specific product yet, but it
 is not an empty shell.
 
-The product pins LINK and exposes the same reusable diagnostic foundations used
-across the LINK family:
+The product pins Link and exposes the same reusable diagnostic foundations used
+across the Link family:
 
 - adapter capability modelling and transport ABI;
 - ELM327 protocol/session/CAN/probe engines;
@@ -18,11 +18,11 @@ across the LINK family:
 - telemetry/history/export primitives;
 - generic ECU-probe and diagnostic-flow machinery;
 - shared KWP2000 support where applicable; and
-- the shared operator-task application model and common presentation behaviour supplied by LINK.
+- the shared operator-task application model and common presentation behaviour supplied by Link.
 
 What is intentionally missing is Audi/VAG-specific knowledge: module maps,
 proprietary PIDs/DIDs, manufacturer DTC meanings, security algorithms and
-brand-specific workflows. Those belong in AUDILINK only when evidence supports
+brand-specific workflows. Those belong in AUDILink only when evidence supports
 them.
 
 The `audilink-generic-diagnostics` test protects this baseline independently

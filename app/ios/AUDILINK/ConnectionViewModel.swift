@@ -20,7 +20,7 @@ final class ConnectionViewModel: LinkStandardProductViewModel,
         super.init(
             controller: controller,
             configuration: LinkStandardProductConfiguration(
-                productName: "AUDILINK",
+                productName: "AUDILink",
                 productNamespace: "audilink",
                 manufacturerName: "Audi",
                 vehicleName: "Audi vehicle",

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-name: AUDILINK CI
+name: AUDILink CI
 on:
   push:
     branches: [main]
@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           submodules: recursive
-      - name: Verify exact LINK pin
+      - name: Verify exact Link pin
         shell: bash
         run: |
           set -euo pipefail
@@ -51,17 +51,17 @@ jobs:
           version=$(tr -d '[:space:]' < VERSION)
           out="$RUNNER_TEMP/qualified-core"
           source_root=$(mktemp -d)
-          staging="$source_root/AUDILINK-$version"
+          staging="$source_root/AUDILink-$version"
           trap 'rm -rf "$source_root"' EXIT
           mkdir -p "$out" "$staging"
           git archive HEAD | tar -x -C "$staging"
           export ARCHIVE_ROOT="$staging"
           git submodule foreach --recursive 'mkdir -p "$ARCHIVE_ROOT/$displaypath"; git archive HEAD | tar -x -C "$ARCHIVE_ROOT/$displaypath"'
-          (cd "$source_root" && zip -qry "$out/AUDILINK-$version-source.zip" "AUDILINK-$version")
-          unzip -tq "$out/AUDILINK-$version-source.zip"
+          (cd "$source_root" && zip -qry "$out/AUDILink-$version-source.zip" "AUDILink-$version")
+          unzip -tq "$out/AUDILink-$version-source.zip"
           
           printf '%s\n' "$GITHUB_SHA" > "$out/SOURCE_COMMIT-core"
-          (cd "$out" && sha256sum AUDILINK-* > SHA256SUMS-core)
+          (cd "$out" && sha256sum AUDILink-* > SHA256SUMS-core)
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: qualified-core
@@ -135,8 +135,8 @@ jobs:
           set -euo pipefail
           log="$RUNNER_TEMP/navigation.log"
           GTK_A11Y=none G_DEBUG=fatal-warnings timeout 45s xvfb-run -a ./build-linux/audilink --ui-navigation-stress | tee "$log"
-          grep -Fq 'LINK GTK timed navigation stress verified:' "$log"
-          grep -Fq 'AUDILINK is GUI-first' app/linux/main.c
+          grep -Fq 'Link GTK timed navigation stress verified:' "$log"
+          grep -Fq 'AUDILink is GUI-first' app/linux/main.c
           grep -Fq 'LinkTaskTile(.vehicle)' src/link/platform/apple/LinkDiagnosticUI.swift
           grep -Fq 'LinkTaskTile(.errors)' src/link/platform/apple/LinkDiagnosticUI.swift
           grep -Fq 'LinkTaskTile(.table)' src/link/platform/apple/LinkDiagnosticUI.swift
@@ -151,11 +151,11 @@ jobs:
           grep -Fq '@interface AudiLinkDiagnosticsController : LinkProductDiagnosticsController' platform/apple/AudiLinkDiagnosticsController.h
           grep -Fq 'return _shared.standardLiveValueRows;' src/link/platform/apple/LinkDiagnosticsController.m
           if grep -Eq '\.link-(connection-bar|device-row|adapter-combo|toolbar-button|link-button|save-session-button|card|status-chip)[^{]*\{[^}]*((min|max)-(width|height)|padding|border-radius)' app/linux/main.c; then
-            echo 'Shared Linux shell geometry must come from LINK, not AUDILINK CSS.' >&2
+            echo 'Shared Linux shell geometry must come from Link, not AUDILink CSS.' >&2
             exit 1
           fi
           if grep -Fq 'adapter_combo_width' app/linux/main.c src/link/platform/linux/link-gtk-shell.h; then
-            echo 'Adapter-selector width must be LINK-owned.' >&2
+            echo 'Adapter-selector width must be Link-owned.' >&2
             exit 1
           fi
           grep -Fq 'gtk_widget_set_hexpand(shell->device_combo, TRUE);' src/link/platform/linux/link-gtk-shell.c
@@ -192,10 +192,10 @@ jobs:
           test "${#packages[@]}" -eq 1
           test "$(dpkg-deb -f "${packages[0]}" Package)" = audilink
           test "$(dpkg-deb -f "${packages[0]}" Version)" = "$version"
-          install -m 0644 "${packages[0]}" "$out/AUDILINK-$version-linux-amd64.deb"
+          install -m 0644 "${packages[0]}" "$out/AUDILink-$version-linux-amd64.deb"
           
           printf '%s\n' "$GITHUB_SHA" > "$out/SOURCE_COMMIT-linux"
-          (cd "$out" && sha256sum AUDILINK-* > SHA256SUMS-linux)
+          (cd "$out" && sha256sum AUDILink-* > SHA256SUMS-linux)
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: qualified-linux
@@ -224,7 +224,7 @@ jobs:
         run: cmake --build build-win32 --config Release --target audilink-discover --parallel
       - name: Prove GUI launches
         shell: powershell
-        run: "& 'src/link/platform/windows/smoke-launch.ps1' -Executable 'build-win32/Release/audilink-discover.exe' -ExpectedTitle 'AUDILINK Discover'"
+        run: "& 'src/link/platform/windows/smoke-launch.ps1' -Executable 'build-win32/Release/audilink-discover.exe' -ExpectedTitle 'AUDILink Discover'"
 
       - name: Seal qualified windows candidate
         shell: powershell
@@ -233,7 +233,7 @@ jobs:
           $version = (Get-Content VERSION -Raw).Trim()
           $out = Join-Path $env:RUNNER_TEMP 'qualified-windows'
           New-Item -ItemType Directory -Force $out | Out-Null
-          $name = "AUDILINK-$version-windows-discover.exe"
+          $name = "AUDILink-$version-windows-discover.exe"
           Copy-Item 'build-win32/Release/audilink-discover.exe' (Join-Path $out $name)
           $hash = (Get-FileHash (Join-Path $out $name) -Algorithm SHA256).Hash.ToLowerInvariant()
           "$hash  $name" | Set-Content (Join-Path $out 'SHA256SUMS-windows') -Encoding ascii -NoNewline
@@ -272,9 +272,9 @@ jobs:
           out="$RUNNER_TEMP/qualified-iphone"
           mkdir -p "$out"
           bash scripts/build-ios-ipa.sh "$RUNNER_TEMP/iphone-build"
-          cp "$RUNNER_TEMP/iphone-build/AUDILINK-$version-unsigned.ipa" "$out/"
+          cp "$RUNNER_TEMP/iphone-build/AUDILink-$version-unsigned.ipa" "$out/"
           printf '%s\n' "$GITHUB_SHA" > "$out/SOURCE_COMMIT-iphone"
-          (cd "$out" && shasum -a 256 AUDILINK-* > SHA256SUMS-iphone)
+          (cd "$out" && shasum -a 256 AUDILink-* > SHA256SUMS-iphone)
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: qualified-iphone

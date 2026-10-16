@@ -81,7 +81,7 @@ if(AUDILINK_BUILD_LINUX_GUI)
   set(CPACK_GENERATOR "DEB")
   set(CPACK_PACKAGE_NAME "audilink")
   set(CPACK_PACKAGE_VENDOR "Infiltrator Projects")
-  set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Audi diagnostics GUI using LINK")
+  set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Audi diagnostics GUI using Link")
   set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
   set(CPACK_PACKAGE_CONTACT "Infiltrator Projects")
   set(CPACK_PACKAGING_INSTALL_PREFIX "/usr")
@@ -99,13 +99,13 @@ if(AUDILINK_BUILD_WINDOWS_DISCOVER)
     message(FATAL_ERROR "AUDILINK_BUILD_WINDOWS_DISCOVER is Windows-only")
   endif()
   link_add_windows_discover(audilink-discover
-    PRODUCT_NAME "AUDILINK" PRODUCT_SLUG "audilink" WINDOW_CLASS "AUDILINKDiscoverWindow"
+    PRODUCT_NAME "AUDILink" PRODUCT_SLUG "audilink" WINDOW_CLASS "AUDILINKDiscoverWindow"
     PRODUCT_VERSION "${PROJECT_VERSION}" PRODUCT_COPYRIGHT "Copyright (C) 1993-2026 Shannon Smith"
     PRODUCT_SUBTITLE "Audi Diagnostics"
     PRODUCT_DESCRIPTION "A C-first, open-source Audi vehicle diagnostics platform."
     PRODUCT_AUTHORS "Shannon Smith"
     PRODUCT_LICENSE_NAME "GPL-3.0-or-later"
-    PRODUCT_WEBSITE "https://github.com/Infiltrator-Projects/AUDILINK"
+    PRODUCT_WEBSITE "https://github.com/Infiltrator-Projects/AUDILink"
     PRODUCT_ICON_PNG "${CMAKE_CURRENT_SOURCE_DIR}/app/ios/AUDILINK/Assets.xcassets/AppIcon.appiconset/AppIcon-60@3x.png")
   target_link_libraries(audilink-discover PRIVATE AUDILINK::Core)
   if(MSVC)

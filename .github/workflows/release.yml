@@ -1,8 +1,8 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-name: AUDILINK Release
+name: AUDILink Release
 on:
   workflow_run:
-    workflows: ["AUDILINK CI"]
+    workflows: ["AUDILink CI"]
     types: [completed]
 permissions:
   contents: read
@@ -62,20 +62,20 @@ jobs:
             (cd release && sha256sum -c "SHA256SUMS-$platform")
           done
           expected=$(printf '%s\n' \
-            "AUDILINK-$version-source.zip" "AUDILINK-$version-linux-amd64.deb" \
-            "AUDILINK-$version-windows-discover.exe" "AUDILINK-$version-unsigned.ipa" | sort)
+            "AUDILink-$version-source.zip" "AUDILink-$version-linux-amd64.deb" \
+            "AUDILink-$version-windows-discover.exe" "AUDILink-$version-unsigned.ipa" | sort)
           actual=$(find release -maxdepth 1 -type f ! -name 'SOURCE_COMMIT-*' ! -name 'SHA256SUMS-*' -printf '%f\n' | sort)
           test "$actual" = "$expected"
-          test "$(dpkg-deb -f "release/AUDILINK-$version-linux-amd64.deb" Package)" = audilink
-          test "$(dpkg-deb -f "release/AUDILINK-$version-linux-amd64.deb" Version)" = "$version"
-          unzip -tq "release/AUDILINK-$version-source.zip"
-          unzip -tq "release/AUDILINK-$version-unsigned.ipa"
+          test "$(dpkg-deb -f "release/AUDILink-$version-linux-amd64.deb" Package)" = audilink
+          test "$(dpkg-deb -f "release/AUDILink-$version-linux-amd64.deb" Version)" = "$version"
+          unzip -tq "release/AUDILink-$version-source.zip"
+          unzip -tq "release/AUDILink-$version-unsigned.ipa"
           rm release/SOURCE_COMMIT-* release/SHA256SUMS-*
-          (cd release && sha256sum AUDILINK-* > SHA256SUMS.txt)
+          (cd release && sha256sum AUDILink-* > SHA256SUMS.txt)
           state=$(gh release view "$tag" --json isDraft,targetCommitish --jq '[.isDraft,.targetCommitish] | @tsv' 2>/dev/null || true)
           if [[ -z "$state" ]]; then
             gh release create "$tag" --target "$EXPECTED_SHA" --draft \
-              --title "AUDILINK $version" \
+              --title "AUDILink $version" \
               --notes "Qualified Linux, Windows and unsigned iPhone artifacts from $EXPECTED_SHA."
             draft=true
           else

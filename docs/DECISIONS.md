@@ -1,20 +1,20 @@
 # Decisions
 
-## ADR-001 — AUDILINK stays thin over LINK
+## ADR-001 — AUDILink stays thin over Link
 
-**Decision.** Product-neutral diagnostic behaviour remains in LINK.
+**Decision.** Product-neutral diagnostic behaviour remains in Link.
 
 **Rationale.** Shared standards and safety fixes must not diverge by manufacturer.
 
-**Consequence.** AUDILINK grows mainly through Audi/VAG-specific evidence and presentation.
+**Consequence.** AUDILink grows mainly through Audi/VAG-specific evidence and presentation.
 
 ## ADR-002 — One dependency chain defines the build
 
-**Decision.** AUDILINK pins LINK and does not independently select Common.
+**Decision.** AUDILink pins Link and does not independently select Common.
 
 **Rationale.** Mixed shared foundations would weaken reproducibility.
 
-**Consequence.** Shared dependency updates are reviewed through the LINK gitlink.
+**Consequence.** Shared dependency updates are reviewed through the Link gitlink.
 
 ## ADR-003 — Generic standards support is not Audi-specific evidence
 
