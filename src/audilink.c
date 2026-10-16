@@ -6,15 +6,7 @@
 #endif
 
 #if defined(__APPLE__) && TARGET_OS_IOS
-#ifndef LINK_SOURCE_REVISION
-#define LINK_SOURCE_REVISION "0caaf4026dcf807397649cd27a38f25ec3be2934"
-#define AUDILINK_DEFINED_LINK_SOURCE_REVISION 1
-#endif
 #include "link/platform/apple/LinkPortableCore.c"
-#ifdef AUDILINK_DEFINED_LINK_SOURCE_REVISION
-#undef AUDILINK_DEFINED_LINK_SOURCE_REVISION
-#undef LINK_SOURCE_REVISION
-#endif
 #endif
 
 const char *audilink_product_name(void){return "AUDILINK";}

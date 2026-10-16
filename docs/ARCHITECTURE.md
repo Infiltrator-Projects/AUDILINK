@@ -49,3 +49,7 @@ These prove the shared standards baseline through AUDILINK. They do not establis
 ## Ownership rule
 
 Audi/VAG-specific VIN/profile/module/network/parameter/procedure knowledge belongs here only when evidence justifies it. Until then, thinness is preferable to guessed catalogue content.
+
+## Build boundaries
+
+`BUILD_TESTING` is the caller-owned CMake switch. The product registers its own tests only when enabled and never rewrites that cache setting while adding LINK. LINK owns its test policy independently. Apple packages receive the actual checked-out LINK commit through `LINK_SOURCE_REVISION`; a direct Xcode build without that input reports an unavailable revision instead of a stale hard-coded SHA. Manufacturer code and identity remain product-owned.
